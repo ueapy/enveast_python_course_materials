@@ -9,6 +9,7 @@ dependencies:
    - numpy
    - matplotlib
    - scipy
+   - pandas
    - cartopy
    - basemap
    - iris
