@@ -1,18 +1,18 @@
 name: course2016
 channels:
    - conda-forge
-   - scitools
 dependencies:
    - python=3.5
    - ipython
    - jupyter
+   - jpeg=9b
    - numpy
    - matplotlib
    - scipy
    - pandas
    - cartopy
    - basemap
-   - iris
+   - iris=1.10
    - h5py
    - netcdf4
    - shapely
