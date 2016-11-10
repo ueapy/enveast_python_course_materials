@@ -1,0 +1,169 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Matplot lib - All your plotting functions under one roof (almost!)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "\n",
+    "Matplotlib is the standed plotting library used by most, which allows simple plotting. \n",
+    "\n",
+    "So let's have a try!\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "# This will plot a simple scatter graph of points. \n",
+    "# The points will have all different sizes just for visual appearance, as well as varied colours\n",
+    "\n",
+    "# Import the required libraries\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# Lets say we want to plot 50 points\n",
+    "N = 50\n",
+    "\n",
+    "# Generate some random data\n",
+    "x = np.random.rand(N)\n",
+    "y = np.random.rand(N)\n",
+    "\n",
+    "# Add a random colour field\n",
+    "colors = np.random.rand(N)\n",
+    "\n",
+    "# Alter the size of the particles randomly\n",
+    "area = np.pi * (15 * np.random.rand(N))**2  # 0 to 15 point radiuses\n",
+    "\n",
+    "# Let's plot it! Simple right? Plot x, y. Alpha = the transparency of the points - very useful! \n",
+    "plt.scatter(x, y, s=area, c=colors, alpha=0.5)\n",
+    "\n",
+    "# To see the figure we need this...\n",
+    "plt.show()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "\n",
+    "# Now can you produce your own X,Y scatter graph? \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    " \n",
+    "# Create some random numbers\n",
+    "n = 100000\n",
+    "x = np.random.randn(n)\n",
+    "y = (1.5 * x) + np.random.randn(n)\n",
+    " \n",
+    "# Plot data\n",
+    "fig1 = plt.figure()\n",
+    "plt.plot(x,y,'.r')\n",
+    "plt.xlabel('x')\n",
+    "plt.ylabel('y')\n",
+    " \n",
+    "# Estimate the 2D histogram\n",
+    "nbins = 200\n",
+    "H, xedges, yedges = np.histogram2d(x,y,bins=nbins)\n",
+    " \n",
+    "# H needs to be rotated and flipped\n",
+    "H = np.rot90(H)\n",
+    "H = np.flipud(H)\n",
+    " \n",
+    "# Mask zeros\n",
+    "Hmasked = np.ma.masked_where(H==0,H) # Mask pixels with a value of zero\n",
+    " \n",
+    "# Plot 2D histogram using pcolor\n",
+    "fig2 = plt.figure()\n",
+    "plt.pcolormesh(xedges,yedges,Hmasked)\n",
+    "plt.xlabel('x')\n",
+    "plt.ylabel('y')\n",
+    "cbar = plt.colorbar()\n",
+    "cbar.ax.set_ylabel('Counts')\n",
+    "\n",
+    "plt.show()\n",
+    "\n",
+    "# Source: https://oceanpython.org/2013/02/25/2d-histogram/ "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda root]",
+   "language": "python",
+   "name": "conda-root-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.5.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
