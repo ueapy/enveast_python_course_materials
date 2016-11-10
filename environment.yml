@@ -1,0 +1,16 @@
+name: course2016
+ channels:
+   - conda-forge
+   - scitools
+ dependencies:
+   - python=3.5
+   - numpy
+   - matplotlib
+   - cartopy
+   - ipython
+   - jupyter
+   - netcdf4
+   - shapely
+   - siphon
+   - xarray
+   - pip
