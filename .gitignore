@@ -1,3 +1,10 @@
+####################
+# Exercises output #
+####################
+Day*/*.txt
+Day*/*.png
+Day*/*.jpg
+Day*/*.nc
 ######################
 # OS generated files #
 ######################
